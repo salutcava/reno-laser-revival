@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
+import AnimateOnScroll from "@/components/AnimateOnScroll";
 
 const pairs = [
   {
@@ -18,79 +20,80 @@ const pairs = [
 ];
 
 const GallerySection = () => {
-  const [mode, setMode] = useState<"two" | "compare">("two");
   const [sliderValues, setSliderValues] = useState<number[]>(pairs.map(() => 50));
 
   return (
-    <section id="galerie" className="py-12 bg-muted/30">
+    <section id="galerie" className="py-16 bg-muted/30">
       <div className="container mx-auto px-5">
-        <h2 className="text-2xl md:text-3xl font-bold text-center mb-6">Avant / Après</h2>
+        <AnimateOnScroll>
+          <h2 className="text-2xl md:text-4xl font-extrabold text-center mb-3">Avant / Après</h2>
+          <p className="text-center text-muted-foreground mb-10 max-w-xl mx-auto">
+            Découvrez la puissance du décapage laser. Glissez pour voir la transformation.
+          </p>
+        </AnimateOnScroll>
 
-        <div className="flex justify-center gap-3 mb-6">
-          <button
-            onClick={() => setMode("two")}
-            className={`px-5 py-2 rounded-full font-bold text-sm transition-colors ${mode === "two" ? "bg-primary text-primary-foreground" : "bg-card text-foreground border border-input"}`}
-          >
-            Deux photos
-          </button>
-          <button
-            onClick={() => setMode("compare")}
-            className={`px-5 py-2 rounded-full font-bold text-sm transition-colors ${mode === "compare" ? "bg-primary text-primary-foreground" : "bg-card text-foreground border border-input"}`}
-          >
-            Comparateur
-          </button>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          {pairs.map((pair, idx) => (
+            <AnimateOnScroll key={pair.label} delay={idx * 150}>
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.2 }}
+                className="relative rounded-2xl overflow-hidden shadow-xl select-none group"
+              >
+                <div className="relative aspect-[4/3]">
+                  <img src={pair.before} alt={pair.altBefore} className="w-full h-full object-cover" />
+                  <div
+                    className="absolute inset-0 overflow-hidden"
+                    style={{ clipPath: `inset(0 0 0 ${sliderValues[idx]}%)` }}
+                  >
+                    <img src={pair.after} alt={pair.altAfter} className="w-full h-full object-cover" />
+                  </div>
+
+                  <span className="absolute top-3 left-3 bg-red-500/90 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">AVANT</span>
+                  <span className="absolute top-3 right-3 bg-green-500/90 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">APRÈS</span>
+
+                  <div
+                    className="absolute top-0 bottom-0 w-0.5 bg-white shadow-[0_0_8px_rgba(255,255,255,0.4)] pointer-events-none"
+                    style={{ left: `${sliderValues[idx]}%` }}
+                  >
+                    <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-8 h-8 bg-white rounded-full shadow-xl flex items-center justify-center">
+                      <span className="text-xs font-bold">⟷</span>
+                    </div>
+                  </div>
+
+                  <input
+                    type="range"
+                    min={0}
+                    max={100}
+                    value={sliderValues[idx]}
+                    onChange={(e) => {
+                      const newVals = [...sliderValues];
+                      newVals[idx] = Number(e.target.value);
+                      setSliderValues(newVals);
+                    }}
+                    className="absolute inset-0 w-full h-full opacity-0 cursor-col-resize z-10"
+                    aria-label="Glisser pour comparer avant/après"
+                  />
+                </div>
+                <div className="bg-card py-3 px-4 text-center">
+                  <span className="font-bold text-foreground">{pair.label}</span>
+                  <span className="text-muted-foreground text-sm ml-2">— Décapage laser</span>
+                </div>
+              </motion.div>
+            </AnimateOnScroll>
+          ))}
         </div>
 
-        {mode === "two" ? (
-          <div className="space-y-6">
-            {pairs.map((pair) => (
-              <div key={pair.label} className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <figure className="text-center">
-                  <img src={pair.before} alt={pair.altBefore} className="rounded-xl w-full" loading="lazy" />
-                  <figcaption className="mt-2 font-bold text-muted-foreground text-sm">AVANT — {pair.label}</figcaption>
-                </figure>
-                <figure className="text-center">
-                  <img src={pair.after} alt={pair.altAfter} className="rounded-xl w-full" loading="lazy" />
-                  <figcaption className="mt-2 font-bold text-muted-foreground text-sm">APRÈS — {pair.label}</figcaption>
-                </figure>
-              </div>
-            ))}
+        <AnimateOnScroll delay={300}>
+          <div className="text-center mt-10">
+            <p className="text-muted-foreground text-sm mb-4">
+              Envoyez vos photos pour un devis précis sous 24h
+            </p>
+            <a href="#contact" className="inline-block bg-primary text-primary-foreground px-8 py-3 rounded-full font-bold no-underline hover:opacity-90 transition-opacity hover:shadow-lg">
+              📷 Envoyer mes photos
+            </a>
           </div>
-        ) : (
-          <div className="space-y-6">
-            {pairs.map((pair, idx) => (
-              <div key={pair.label} className="relative overflow-hidden rounded-xl select-none">
-                <img src={pair.before} alt={pair.altBefore} className="w-full block" />
-                <div
-                  className="absolute inset-0 overflow-hidden"
-                  style={{ clipPath: `inset(0 0 0 ${sliderValues[idx]}%)` }}
-                >
-                  <img src={pair.after} alt={pair.altAfter} className="w-full block" />
-                </div>
-                <span className="absolute top-3 left-3 bg-black/60 text-white text-xs font-bold px-2 py-1 rounded">AVANT</span>
-                <span className="absolute top-3 right-3 bg-black/60 text-white text-xs font-bold px-2 py-1 rounded">APRÈS</span>
-                <input
-                  type="range"
-                  min={0}
-                  max={100}
-                  value={sliderValues[idx]}
-                  onChange={(e) => {
-                    const newVals = [...sliderValues];
-                    newVals[idx] = Number(e.target.value);
-                    setSliderValues(newVals);
-                  }}
-                  className="absolute inset-0 w-full h-full opacity-0 cursor-col-resize"
-                  aria-label="Glisser pour comparer avant/après"
-                />
-                <div className="absolute top-0 bottom-0 w-0.5 bg-white shadow-lg pointer-events-none" style={{ left: `${sliderValues[idx]}%` }} />
-              </div>
-            ))}
-          </div>
-        )}
-
-        <p className="text-center text-muted-foreground text-sm mt-4 italic">
-          Astuce : envoyez vos photos par le formulaire plus bas ou via WhatsApp pour un devis précis.
-        </p>
+        </AnimateOnScroll>
       </div>
     </section>
   );
