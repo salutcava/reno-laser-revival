@@ -20,8 +20,8 @@ const Footer = () => (
         <div>
           <h3 className="text-primary font-extrabold text-xl mb-4">Zones d'intervention</h3>
           <div className="flex flex-col gap-1.5">
-            {seoDepartments.slice(0, 6).map((d) => (
-              <Link key={d.slug} to={`/decapage-laser-${d.slug}`} className="text-gray-300 text-sm hover:text-white hover:underline no-underline">
+            {allDepartments.slice(0, 6).map((d) => (
+              <Link key={d.slug} to={`/decapage-laser/${d.slug}`} className="text-gray-300 text-sm hover:text-white hover:underline no-underline">
                 Décapage laser {d.name} ({d.code})
               </Link>
             ))}
