@@ -1,13 +1,11 @@
-import { useParams, Link, Navigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 import { getDepartmentBySlug, seoDepartments } from "@/data/seoLocations";
 
-const SeoDepartment = () => {
-  const params = useParams();
-  const slug = params["*"] || "";
+const SeoDepartment = ({ slug }: { slug: string }) => {
   const dept = getDepartmentBySlug(slug);
 
   if (!dept) return <Navigate to="/zones-intervention" replace />;
