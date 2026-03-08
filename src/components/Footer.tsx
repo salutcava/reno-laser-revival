@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { seoDepartments } from "@/data/seoLocations";
 
 const Footer = () => (
   <footer className="bg-[hsl(var(--gris-anth))] text-white py-12 px-5">
@@ -7,7 +8,7 @@ const Footer = () => (
         <div>
           <h3 className="text-primary font-extrabold text-xl mb-4">🔧 RenovLaser</h3>
           <p className="text-gray-300 text-sm leading-relaxed">Décapage laser écologique à domicile</p>
-          <p className="text-gray-300 text-sm">Artisan local — Dormans et 30 km</p>
+          <p className="text-gray-300 text-sm">Artisan local — Dormans et Île-de-France</p>
           <p className="text-gray-300 text-sm">SIREN : 944 775 337</p>
         </div>
         <div>
@@ -17,17 +18,24 @@ const Footer = () => (
           <p className="text-gray-300 text-sm">📍 Dormans (51700), France</p>
         </div>
         <div>
-          <h3 className="text-primary font-extrabold text-xl mb-4">Réseaux & Contact</h3>
-          <div className="flex flex-wrap gap-3">
-            <a href="https://instagram.com/renovlaser" target="_blank" rel="noopener" className="bg-[#39414b] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-primary transition-colors no-underline">📷 Instagram</a>
-            <a href="https://wa.me/33761466823" target="_blank" rel="noopener" className="bg-[#39414b] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-primary transition-colors no-underline">💬 WhatsApp</a>
-            <a href="mailto:contact@renovlaser.fr" className="bg-[#39414b] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-primary transition-colors no-underline">✉️ Email</a>
+          <h3 className="text-primary font-extrabold text-xl mb-4">Zones d'intervention</h3>
+          <div className="flex flex-col gap-1.5">
+            {seoDepartments.slice(0, 6).map((d) => (
+              <Link key={d.slug} to={`/decapage-laser-${d.slug}`} className="text-gray-300 text-sm hover:text-white hover:underline no-underline">
+                Décapage laser {d.name} ({d.code})
+              </Link>
+            ))}
+            <Link to="/zones-intervention" className="text-primary text-sm font-semibold hover:underline no-underline mt-1">
+              Toutes les zones →
+            </Link>
           </div>
         </div>
         <div>
           <h3 className="text-primary font-extrabold text-xl mb-4">Liens utiles</h3>
           <div className="flex flex-col gap-2">
             <Link to="/qui-sommes-nous" className="text-gray-300 text-sm hover:text-white hover:underline no-underline">Qui sommes-nous ?</Link>
+            <Link to="/laser-renovation" className="text-gray-300 text-sm hover:text-white hover:underline no-underline">Laser Rénovation</Link>
+            <Link to="/renovation-decapage" className="text-gray-300 text-sm hover:text-white hover:underline no-underline">Rénovation & Décapage</Link>
             <Link to="/zones-intervention" className="text-gray-300 text-sm hover:text-white hover:underline no-underline">Zones d'intervention</Link>
             <Link to="/mentions-legales" className="text-gray-300 text-sm hover:text-white hover:underline no-underline">Mentions légales</Link>
             <Link to="/cgu" className="text-gray-300 text-sm hover:text-white hover:underline no-underline">CGU</Link>
