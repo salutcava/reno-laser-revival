@@ -10,8 +10,10 @@ import LaserRenovation from "./pages/LaserRenovation";
 import RenovationDecapage from "./pages/RenovationDecapage";
 import MentionsLegales from "./pages/MentionsLegales";
 import CGU from "./pages/CGU";
-import SeoDepartmentOrCity from "./pages/SeoDepartmentOrCity";
+import SeoDepartment from "./pages/SeoDepartment";
+import SeoCity from "./pages/SeoCity";
 import NotFound from "./pages/NotFound";
+import { seoDepartments, getAllCities } from "./data/seoLocations";
 
 const queryClient = new QueryClient();
 
@@ -29,8 +31,12 @@ const App = () => (
           <Route path="/renovation-decapage" element={<RenovationDecapage />} />
           <Route path="/mentions-legales" element={<MentionsLegales />} />
           <Route path="/cgu" element={<CGU />} />
-          {/* SEO pages with dynamic slugs */}
-          <Route path="/decapage-laser-:slug" element={<SeoDepartmentOrCity />} />
+          {seoDepartments.map((dept) => (
+            <Route key={dept.slug} path={`/decapage-laser-${dept.slug}`} element={<SeoDepartment slug={dept.slug} />} />
+          ))}
+          {getAllCities().map((city) => (
+            <Route key={city.slug} path={`/decapage-laser-${city.slug}`} element={<SeoCity slug={city.slug} />} />
+          ))}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
