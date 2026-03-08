@@ -31,22 +31,8 @@ const App = () => (
           <Route path="/renovation-decapage" element={<RenovationDecapage />} />
           <Route path="/mentions-legales" element={<MentionsLegales />} />
           <Route path="/cgu" element={<CGU />} />
-          {/* SEO department pages */}
-          {seoDepartments.map((dept) => (
-            <Route
-              key={dept.slug}
-              path={`/decapage-laser-${dept.slug}`}
-              element={<SeoDepartment />}
-            />
-          ))}
-          {/* SEO city pages */}
-          {getAllCities().map((city) => (
-            <Route
-              key={city.slug}
-              path={`/decapage-laser-${city.slug}`}
-              element={<SeoCity />}
-            />
-          ))}
+          {/* SEO pages with dynamic slugs */}
+          <Route path="/decapage-laser-:slug" element={<SeoDepartmentOrCity />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
