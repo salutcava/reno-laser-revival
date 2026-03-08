@@ -3,6 +3,8 @@ import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
+import SeoCTA from "@/components/seo/SeoCTA";
+import SeoHeroContact from "@/components/seo/SeoHeroContact";
 import { getDepartmentBySlug, allDepartments } from "@/data/seoLocations";
 
 const SeoDepartment = ({ slug }: { slug: string }) => {
