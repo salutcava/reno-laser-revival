@@ -151,7 +151,7 @@ const SeoDepartment = ({ slug }: { slug: string }) => {
               {otherDepts.map((d) => (
                 <Link
                   key={d.slug}
-                  to={`/decapage-laser-${d.slug}`}
+                  to={`/decapage-laser/${d.slug}`}
                   className="bg-card border border-border rounded-full px-5 py-2 text-sm font-semibold hover:border-primary hover:text-primary transition-all no-underline"
                 >
                   {d.name} ({d.code})

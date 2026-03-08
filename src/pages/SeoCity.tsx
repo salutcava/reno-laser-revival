@@ -173,7 +173,7 @@ const SeoCity = ({ slug }: { slug: string }) => {
                   </Link>
                 ))}
                 <Link
-                  to={`/decapage-laser-${dept.slug}`}
+                  to={`/decapage-laser/${dept.slug}`}
                   className="bg-primary/10 text-primary rounded-full px-5 py-2 text-sm font-semibold hover:bg-primary hover:text-primary-foreground transition-all no-underline"
                 >
                   Tout le {dept.name} →
