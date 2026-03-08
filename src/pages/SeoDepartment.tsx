@@ -6,8 +6,9 @@ import AnimateOnScroll from "@/components/AnimateOnScroll";
 import { getDepartmentBySlug, seoDepartments } from "@/data/seoLocations";
 
 const SeoDepartment = () => {
-  const { slug } = useParams<{ slug: string }>();
-  const dept = getDepartmentBySlug(slug || "");
+  const params = useParams();
+  const slug = params["*"] || "";
+  const dept = getDepartmentBySlug(slug);
 
   if (!dept) return <Navigate to="/zones-intervention" replace />;
 

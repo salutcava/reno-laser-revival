@@ -6,8 +6,9 @@ import AnimateOnScroll from "@/components/AnimateOnScroll";
 import { getCityBySlug, getDepartmentBySlug } from "@/data/seoLocations";
 
 const SeoCity = () => {
-  const { slug } = useParams<{ slug: string }>();
-  const city = getCityBySlug(slug || "");
+  const params = useParams();
+  const slug = params["*"] || "";
+  const city = getCityBySlug(slug);
   const dept = city ? getDepartmentBySlug(city.departmentSlug) : null;
 
   if (!city || !dept) return <Navigate to="/zones-intervention" replace />;
