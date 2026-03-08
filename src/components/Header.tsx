@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone, Mail } from "lucide-react";
+import Logo from "./Logo";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -29,9 +30,8 @@ const Header = () => {
     <header className="bg-card shadow-md sticky top-0 z-50">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between py-3 gap-4 flex-wrap">
-          <Link to="/" className="flex items-center gap-2 text-primary font-extrabold text-2xl no-underline hover:opacity-85">
-            <span aria-hidden="true">🔧</span>
-            <span>RenovLaser</span>
+          <Link to="/" className="no-underline hover:opacity-85 transition-opacity">
+            <Logo className="h-10 w-auto" />
           </Link>
 
           {/* Desktop nav */}
