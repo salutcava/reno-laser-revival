@@ -31,11 +31,11 @@ const App = () => (
           <Route path="/renovation-decapage" element={<RenovationDecapage />} />
           <Route path="/mentions-legales" element={<MentionsLegales />} />
           <Route path="/cgu" element={<CGU />} />
-          {seoDepartments.map((dept) => (
-            <Route key={dept.slug} path={`/decapage-laser-${dept.slug}`} element={<SeoDepartment slug={dept.slug} />} />
+          {allDepartments.map((dept) => (
+            <Route key={dept.slug} path={`/decapage-laser/${dept.slug}`} element={<SeoDepartment slug={dept.slug} />} />
           ))}
           {getAllCities().map((city) => (
-            <Route key={city.slug} path={`/decapage-laser-${city.slug}`} element={<SeoCity slug={city.slug} />} />
+            <Route key={city.slug} path={`/decapage-laser/${city.slug}`} element={<SeoCity slug={city.slug} />} />
           ))}
           <Route path="*" element={<NotFound />} />
         </Routes>
