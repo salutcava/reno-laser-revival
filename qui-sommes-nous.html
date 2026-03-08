@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="#8A9A7C" />
+    <meta
+      name="description"
+      content="Découvrez qui se cache derrière RenovLaser, artisan local à Dormans spécialisé dans le décapage laser."
+    />
+    <title>Qui sommes-nous – RenovLaser</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔧</text></svg>"
+    />
+
+    <!-- Styles CSS factorisés -->
+    <link rel="stylesheet" href="./assets/css/variables.css" />
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <link rel="stylesheet" href="./assets/css/header.css" />
+    <link rel="stylesheet" href="./assets/css/footer.css" />
+    <link rel="stylesheet" href="./assets/css/buttons.css" />
+    <link rel="stylesheet" href="./assets/css/floating-contacts.css" />
+  </head>
+  <body>
+    <header role="banner">
+      <div class="container">
+        <div class="header-content">
+          <a
+            class="logo"
+            href="/index.html"
+            aria-label="Retour à l'accueil RenovLaser"
+            ><span aria-hidden="true">🔧</span><span>RenovLaser</span></a
+          >
+          <div class="nav">
+            <nav aria-label="Navigation principale">
+              <ul class="nav-list">
+                <li><a href="/#prestations">Prestations</a></li>
+                <li><a href="/#simulateur">Simulateur</a></li>
+                <li>
+                  <a href="/zones-intervention.html">Zones d'intervention</a>
+                </li>
+                <li><a href="/#contact">Contact</a></li>
+              </ul>
+            </nav>
+            <button
+              class="nav-toggle"
+              aria-controls="mobileMenu"
+              aria-expanded="false"
+              aria-label="Ouvrir le menu de navigation"
+            >
+              ☰ Menu
+            </button>
+          </div>
+          <div class="header-contact">
+            <a href="tel:+33761466823" aria-label="Téléphoner au 07 61 46 68 23"
+              >📞 07 61 46 68 23</a
+            >
+            <a href="mailto:contact@renovlaser.fr" aria-label="Envoyer un email"
+              >✉️ Email</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="nav-backdrop" id="navBackdrop" hidden></div>
+      <aside
+        class="nav-drawer"
+        id="mobileMenu"
+        aria-hidden="true"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="drawer-title"
+      >
+        <div class="drawer-head">
+          <strong id="drawer-title">Menu</strong
+          ><button
+            class="drawer-close"
+            id="drawerClose"
+            aria-label="Fermer le menu"
+          >
+            ×
+          </button>
+        </div>
+        <nav aria-label="Navigation mobile">
+          <ul class="drawer-list">
+            <li><a href="/#prestations">Prestations</a></li>
+            <li><a href="/#simulateur">Simulateur</a></li>
+            <li>
+              <a href="/zones-intervention.html"
+                >Zones d'intervention</a
+              >
+            </li>
+            <li><a href="/#contact">Contact</a></li>
+            <!-- Lien "Qui sommes-nous ?" retiré du menu mobile -->
+          </ul>
+        </nav>
+        <div class="drawer-contacts">
+          <a href="tel:+33761466823">📞 07 61 46 68 23</a
+          ><a href="mailto:contact@renovlaser.fr">✉️ contact@renovlaser.fr</a
+          ><a href="https://wa.me/33761466823" target="_blank" rel="noopener"
+            >🟢 WhatsApp</a
+          >
+        </div>
+      </aside>
+    </header>
+    <main id="main">
+      <section>
+        <div class="container">
+          <h1>Qui sommes-nous ?</h1>
+          <p>
+            Bienvenue sur la page “Qui sommes-nous ?”. Je m'appelle
+            <strong>RenovLaser</strong> et je suis artisan indépendant basé à
+            Dormans, dans la Marne. Après plusieurs années d’expérience dans la
+            rénovation de patrimoine et la restauration de matériaux, j’ai
+            décidé de mettre à votre service une technologie propre et
+            novatrice : le décapage laser.
+          </p>
+          <p>
+            Le décapage laser permet de retirer peintures, vernis, rouille ou
+            salissures sans abîmer le support. Contrairement aux techniques
+            traditionnelles (ponçage, aérogommage, produits chimiques), le laser
+            n’utilise aucun abrasif ni solvant. C’est une solution respectueuse
+            des matériaux et de l’environnement. Chaque intervention est
+            précédée d’un test local pour trouver les bons réglages et garantir
+            un résultat impeccable.
+          </p>
+          <p>
+            Mon objectif est simple : redonner vie à vos volets, portails,
+            meubles, jantes, outils agricoles ou encore façades en pierre.
+            J’interviens chez vous ou en atelier dans un rayon de 30 km autour
+            de Dormans. Je privilégie les échanges de proximité et les conseils
+            honnêtes : vous bénéficiez d’un devis gratuit sur photos et d’un
+            accompagnement personnalisé tout au long de votre projet.
+          </p>
+          <p>
+            Merci de votre confiance et à bientôt pour redonner éclat à vos
+            surfaces !
+          </p>
+        </div>
+      </section>
+    </main>
+    <div class="sticky-cta" role="navigation" aria-label="Actions rapides">
+      <a class="btn-primary" href="tel:+33761466823">Appeler</a
+      ><a class="btn-primary" href="/#contact">Devis gratuit</a>
+    </div>
+    <div class="floating-contacts" id="floatingContacts" aria-hidden="true">
+      <a href="tel:+33761466823" aria-label="Téléphoner">📞 Appeler</a
+      ><a href="mailto:contact@renovlaser.fr" aria-label="Envoyer un email"
+        >✉️ Email</a
+      ><a
+        href="https://wa.me/33761466823"
+        target="_blank"
+        rel="noopener"
+        aria-label="Contacter sur WhatsApp"
+        >🟢 WhatsApp</a
+      >
+    </div>
+    <footer role="contentinfo">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h3>🔧 RenovLaser</h3>
+            <p>Décapage laser écologique à domicile</p>
+            <p>Artisan local — Dormans et 30 km</p>
+            <p>SIREN : 944 775 337</p>
+          </div>
+          <div class="footer-col">
+            <h3>Coordonnées</h3>
+            <p>📞 <a href="tel:+33761466823">07 61 46 68 23</a></p>
+            <p>
+              ✉️
+              <a href="mailto:contact@renovlaser.fr">contact@renovlaser.fr</a>
+            </p>
+            <p>📍 Dormans (51700), France</p>
+          </div>
+          <div class="footer-col">
+            <h3>Réseaux & Contact</h3>
+            <div class="socials">
+              <a
+                href="https://instagram.com/renovlaser"
+                target="_blank"
+                rel="noopener"
+                aria-label="Instagram RenovLaser (nouvel onglet)"
+                >📷 Instagram</a
+              ><a
+                href="https://wa.me/33761466823"
+                target="_blank"
+                rel="noopener"
+                aria-label="WhatsApp RenovLaser (nouvel onglet)"
+                >💬 WhatsApp</a
+              ><a
+                href="mailto:contact@renovlaser.fr"
+                aria-label="Envoyer un email"
+                >✉️ Email</a
+              ><a href="tel:+33761466823" aria-label="Téléphoner"
+                >📞 Téléphone</a
+              >
+            </div>
+          </div>
+          <div class="footer-col">
+            <h3>Liens utiles</h3>
+            <p><a href="/qui-sommes-nous.html">Qui sommes-nous ?</a></p>
+            <p>
+              <a href="/zones-intervention.html"
+                >Zones d'intervention</a
+              >
+            </p>
+            <p><a href="/mentions.html">Mentions légales</a></p>
+            <p><a href="/cgu.html">CGU</a></p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          © RenovLaser 2025 — SIREN 944 775 337 — Tous droits réservés.<br /><a
+            href="/mentions.html"
+            >Mentions légales</a
+          >
+          • <a href="/cgu.html">CGU</a>
+        </div>
+      </div>
+    </footer>
+    <!-- Scripts externes -->
+    <script src="/assets/js/navigation.js" defer></script>
+    <script src="/assets/js/floating-contacts.js" defer></script>
+    <script src="/assets/js/smooth-scroll.js" defer></script>
+  </body>
+</html>

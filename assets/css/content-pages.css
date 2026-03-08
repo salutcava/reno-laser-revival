@@ -1,0 +1,13 @@
+/* Styles pour les pages de contenu (mentions, CGU, qui-sommes-nous) */
+
+section:nth-of-type(even) {
+  background: #fff;
+}
+
+ul {
+  margin-bottom: 16px;
+}
+
+li {
+  margin-bottom: 8px;
+}

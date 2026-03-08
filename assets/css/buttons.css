@@ -1,0 +1,54 @@
+/* Boutons et CTA */
+.btn-primary {
+  background: var(--vert-sauge);
+  color: #fff;
+  border: 2px solid var(--vert-sauge);
+}
+
+.btn-primary:hover {
+  background: var(--vert-fonce);
+  border-color: var(--vert-fonce);
+  text-decoration: none;
+}
+
+.btn-outline {
+  background: #fff;
+  color: var(--vert-sauge);
+  border: 2px solid var(--vert-sauge);
+}
+
+.btn-outline:hover {
+  border-color: var(--vert-fonce);
+  color: var(--vert-fonce);
+  text-decoration: none;
+}
+
+/* Sticky CTA mobile */
+.sticky-cta {
+  position: sticky;
+  bottom: 0;
+  background: #fff;
+  border-top: 2px solid #eee;
+  padding: 14px 16px;
+  display: none;
+  justify-content: center;
+  gap: 12px;
+  z-index: 90;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.sticky-cta a {
+  text-decoration: none;
+  flex: 1;
+  max-width: 200px;
+  text-align: center;
+  border-radius: 50px;
+  padding: 12px 20px;
+  font-weight: 800;
+}
+
+@media (max-width: 768px) {
+  .sticky-cta {
+    display: flex;
+  }
+}

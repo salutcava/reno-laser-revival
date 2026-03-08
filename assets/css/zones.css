@@ -1,0 +1,36 @@
+/* Styles spécifiques à la page zones d'intervention */
+
+.zones-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.zone-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  padding: 24px;
+  transition: transform 0.2s ease;
+  text-align: center;
+}
+
+.zone-card:hover {
+  transform: translateY(-4px);
+}
+
+.zone-card a {
+  display: block;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--vert-sauge);
+  margin-bottom: 8px;
+}
+
+iframe {
+  width: 100%;
+  border: 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}

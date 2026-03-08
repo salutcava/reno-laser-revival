@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title id="meta-title">Décapage laser – Ville</title>
+    <meta
+      id="meta-desc"
+      name="description"
+      content="Décapage laser à domicile. Bois, métal, pierre. Devis gratuit."
+    />
+    <link id="link-canonical" rel="canonical" href="" />
+    <meta property="og:type" content="website" />
+    <meta id="og-title" property="og:title" content="Décapage laser – Ville" />
+    <meta
+      id="og-desc"
+      property="og:description"
+      content="Décapage laser à domicile. Bois, métal, pierre. Devis gratuit."
+    />
+    <meta id="og-image" property="og:image" content="/assets/og-cover.jpg" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Styles CSS factorisés -->
+    <link rel="stylesheet" href="/assets/css/ville.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container hd">
+        <a class="logo" href="/" aria-label="Retour à l'accueil RenovLaser"
+          ><span aria-hidden="true">🔧</span><span>RenovLaser</span></a
+        >
+        <nav>
+          <a href="/zones-intervention.html">← Zones d’intervention</a> ·
+          <a href="/#contact">Devis gratuit</a>
+        </nav>
+      </div>
+    </header>
+    <section class="hero">
+      <div class="container">
+        <h1 id="h1">Décapage laser</h1>
+        <p id="intro">
+          Je couvre cette ville et les alentours depuis Dormans. Décapage bois,
+          métal, pierre et pièces mécaniques.
+        </p>
+        <a class="cta" href="/#contact">Demander un devis</a>
+      </div>
+    </section>
+    <main class="container">
+      <div id="seo-intro" class="card" style="margin-top: 24px; display: none">
+        <h2 id="seo-title"></h2>
+        <p id="seo-intro-text"></p>
+      </div>
+      <h2>Prestations courantes</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>🪵 Bois</h3>
+          <p>Volets, portes, meubles, poutres</p>
+          <p><strong>À partir de :</strong> 40€ / volet · 80€ / porte</p>
+        </div>
+        <div class="card">
+          <h3>🔩 Métal</h3>
+          <p>Portails, grilles, rambardes, jantes</p>
+          <p><strong>À partir de :</strong> 150€ portail · 50€ jante</p>
+        </div>
+        <div class="card">
+          <h3>🏛️ Pierre & Véhicules</h3>
+          <p>
+            Façades, plaques, monuments · Tags carrosserie, pièces mécaniques
+          </p>
+          <p>
+            <strong>À partir de :</strong> 20€ / m² (pierre) · Devis après photo
+            (véhicule)
+          </p>
+        </div>
+      </div>
+      <div
+        id="seo-why-choose"
+        class="card"
+        style="margin-top: 24px; display: none"
+      >
+        <h2>Pourquoi choisir le décapage laser ?</h2>
+        <p id="seo-why-choose-text"></p>
+      </div>
+      <div
+        id="seo-applications"
+        class="card"
+        style="margin-top: 24px; display: none"
+      >
+        <h2>Applications et interventions</h2>
+        <p id="seo-applications-text"></p>
+      </div>
+      <h2 style="margin-top: 18px">Questions fréquentes</h2>
+      <div class="grid" id="faq">
+        <div class="card">
+          <strong>Le laser abîme-t-il la surface ?</strong><br />Non, je règle
+          la puissance selon le matériau et je réalise un test sur une zone
+          discrète.
+        </div>
+        <div class="card">
+          <strong>Intervention en intérieur ?</strong><br />Oui, méthode propre
+          et sans poussière. Protections adaptées.
+        </div>
+        <div class="card">
+          <strong>Devis rapide ?</strong><br />Oui, envoyez des photos/vidéos
+          via le formulaire ou WhatsApp. Réponse sous 24h.
+        </div>
+      </div>
+      <h2>💰 Simulateur de tarif</h2>
+      <div class="sim-card">
+        <form id="ville-sim-form">
+          <div class="sim-grid">
+            <div class="sim-group">
+              <label for="ville-sim-type"
+                ><span class="label-icon">🔧</span
+                ><span>Type d'intervention</span></label
+              ><select id="ville-sim-type" name="type" required>
+                <option value="">Sélectionnez…</option>
+                <option value="volet">🪵 Volets bois</option>
+                <option value="porte">🚪 Porte bois</option>
+                <option value="portail">🔩 Portail métal</option>
+                <option value="jante">⚙️ Jante</option>
+                <option value="pierre">🏛️ Pierre (m²)</option>
+                <option value="agri">🚜 Outils agricoles (h)</option>
+              </select>
+            </div>
+            <div class="sim-group">
+              <label for="ville-sim-qty" id="ville-sim-qty-label"
+                ><span class="label-icon">📊</span><span>Quantité</span></label
+              ><input
+                id="ville-sim-qty"
+                name="qty"
+                type="number"
+                min="1"
+                step="1"
+                value="1"
+                required
+              />
+            </div>
+            <div class="sim-group">
+              <label for="ville-sim-deg"
+                ><span class="label-icon">⚡</span
+                ><span>Complexité</span></label
+              ><select id="ville-sim-deg" name="degre">
+                <option value="1">Standard</option>
+                <option value="1.2">Complexe (+20%)</option>
+                <option value="1.4">Très complexe (+40%)</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="btn-sim">
+            <span>🧮</span><span>Calculer le tarif</span>
+          </button>
+          <div id="ville-sim-result" class="sim-result"></div>
+          <p class="sim-note">
+            ℹ️ Estimation indicative, hors déplacement. Prix définitif après
+            photos.
+          </p>
+        </form>
+      </div>
+      <h2 style="margin-top: 18px">Contact</h2>
+      <div class="card">
+        <p>
+          <strong>Tél :</strong> <a href="tel:+33761466823">07 61 46 68 23</a> –
+          <strong>WhatsApp :</strong>
+          <a href="https://wa.me/33761466823">wa.me/33761466823</a>
+        </p>
+        <p>
+          <strong>Email :</strong>
+          <a href="mailto:contact@renovlaser.fr">contact@renovlaser.fr</a>
+        </p>
+        <p><a class="cta" href="/#contact">Demander un devis</a></p>
+      </div>
+    </main>
+    <footer>© 2025 RenovLaser – SIREN 944775337 – Dormans</footer>
+    <script src="/assets/js/city-page.js" defer></script>
+    <script>
+      (function () {
+        "use strict";
+        const PRICES = {
+          volet: 40,
+          porte: 80,
+          portail: 150,
+          jante: 50,
+          pierre: 20,
+          agri: 80,
+        };
+        const form = document.getElementById("ville-sim-form");
+        const result = document.getElementById("ville-sim-result");
+        const typeSelect = document.getElementById("ville-sim-type");
+        const qtyInput = document.getElementById("ville-sim-qty");
+        const qtyLabel = document.getElementById("ville-sim-qty-label");
+        const degSelect = document.getElementById("ville-sim-deg");
+        if (!form) return;
+        function updateLabel() {
+          const t = typeSelect.value;
+          if (t === "pierre") {
+            qtyLabel.innerHTML =
+              '<span class="label-icon">📊</span><span>Surface (m²)</span>';
+          } else if (t === "agri") {
+            qtyLabel.innerHTML =
+              '<span class="label-icon">📊</span><span>Durée (heures)</span>';
+          } else {
+            qtyLabel.innerHTML =
+              '<span class="label-icon">📊</span><span>Quantité</span>';
+          }
+        }
+        typeSelect.addEventListener("change", updateLabel);
+        updateLabel();
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const type = typeSelect.value;
+          const qty = Math.max(1, parseFloat(qtyInput.value || "1"));
+          const coef = parseFloat(degSelect.value || "1");
+          if (!type) {
+            result.textContent = "Veuillez sélectionner un type";
+            return;
+          }
+          let base = 0;
+          if (type === "pierre") base = PRICES.pierre * qty;
+          else if (type === "agri") base = PRICES.agri * qty;
+          else base = (PRICES[type] || 0) * qty;
+          const total = Math.round(base * coef);
+          result.textContent = total
+            ? `Estimation : environ ${total} € TTC`
+            : "Calcul impossible";
+        });
+      })();
+    </script>
+  </body>
+</html>
