@@ -13,7 +13,7 @@ import CGU from "./pages/CGU";
 import SeoDepartment from "./pages/SeoDepartment";
 import SeoCity from "./pages/SeoCity";
 import NotFound from "./pages/NotFound";
-import { seoDepartments, getAllCities } from "./data/seoLocations";
+import { allDepartments, getAllCities } from "./data/seoLocations";
 
 const queryClient = new QueryClient();
 
