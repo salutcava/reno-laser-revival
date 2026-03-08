@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
-import { seoDepartments } from "@/data/seoLocations";
+import { allDepartments } from "@/data/seoLocations";
 
 const ZonesIntervention = () => (
   <>
