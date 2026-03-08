@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
-import { getDepartmentBySlug, seoDepartments } from "@/data/seoLocations";
+import { getDepartmentBySlug, allDepartments } from "@/data/seoLocations";
 
 const SeoDepartment = ({ slug }: { slug: string }) => {
   const dept = getDepartmentBySlug(slug);
