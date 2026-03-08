@@ -120,7 +120,7 @@ const SeoDepartment = ({ slug }: { slug: string }) => {
               {dept.cities.map((city, idx) => (
                 <AnimateOnScroll key={city.slug} delay={idx * 80}>
                   <Link
-                    to={`/decapage-laser-${city.slug}`}
+                    to={`/decapage-laser/${city.slug}`}
                     className="block bg-background rounded-xl p-5 border border-border/50 hover:border-primary hover:shadow-lg transition-all no-underline group"
                   >
                     <h3 className="font-bold text-lg group-hover:text-primary transition-colors">
