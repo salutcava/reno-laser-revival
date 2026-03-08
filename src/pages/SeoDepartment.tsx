@@ -10,7 +10,7 @@ const SeoDepartment = ({ slug }: { slug: string }) => {
 
   if (!dept) return <Navigate to="/zones-intervention" replace />;
 
-  const otherDepts = seoDepartments.filter((d) => d.slug !== dept.slug).slice(0, 4);
+  const otherDepts = allDepartments.filter((d) => d.slug !== dept.slug).slice(0, 4);
 
   return (
     <>
