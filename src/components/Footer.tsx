@@ -7,7 +7,7 @@ const Footer = () => (
     <div className="container mx-auto">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
         <div>
-          <h3 className="text-primary font-extrabold text-xl mb-4">🔧 RenovLaser</h3>
+          <Logo className="h-8 w-auto invert brightness-200" />
           <p className="text-gray-300 text-sm leading-relaxed">Décapage laser écologique à domicile</p>
           <p className="text-gray-300 text-sm">Artisan local — Dormans et Île-de-France</p>
           <p className="text-gray-300 text-sm">SIREN : 944 775 337</p>
