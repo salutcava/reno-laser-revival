@@ -30,7 +30,7 @@ const App = () => (
           <Route path="/mentions-legales" element={<MentionsLegales />} />
           <Route path="/cgu" element={<CGU />} />
           {/* SEO pages with dynamic slugs */}
-          <Route path="/decapage-laser-:slug" element={<SeoDepartmentOrCity />} />
+          <Route path="/decapage-laser-*" element={<SeoDepartmentOrCity />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
