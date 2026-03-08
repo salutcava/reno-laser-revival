@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap');
+
+@layer base {
+  :root {
+    --background: 40 33% 97%;
+    --foreground: 213 14% 21%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 213 14% 21%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 213 14% 21%;
+
+    --primary: 105 12% 54%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 105 12% 40%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 40 33% 95%;
+    --muted-foreground: 213 5% 45%;
+
+    --accent: 43 100% 50%;
+    --accent-foreground: 213 14% 21%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 72% 37%;
+    --success-foreground: 0 0% 100%;
+
+    --border: 213 14% 88%;
+    --input: 213 14% 88%;
+    --ring: 105 12% 54%;
+
+    --radius: 0.5rem;
+
+    /* Brand custom tokens */
+    --blanc-casse: 40 33% 97%;
+    --vert-sauge: 105 12% 54%;
+    --gris-anth: 213 14% 21%;
+    --vert-fonce: 105 12% 40%;
+  }
+
+  .dark {
+    --background: 213 14% 21%;
+    --foreground: 40 33% 97%;
+    --card: 213 14% 15%;
+    --card-foreground: 40 33% 97%;
+    --popover: 213 14% 15%;
+    --popover-foreground: 40 33% 97%;
+    --primary: 105 12% 54%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 105 12% 40%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 213 14% 25%;
+    --muted-foreground: 213 5% 65%;
+    --accent: 43 100% 50%;
+    --accent-foreground: 213 14% 21%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 213 14% 30%;
+    --input: 213 14% 30%;
+    --ring: 105 12% 54%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Montserrat', sans-serif;
+  }
+}
