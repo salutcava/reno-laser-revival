@@ -36,7 +36,7 @@ const SeoCity = ({ slug }: { slug: string }) => {
       <Helmet>
         <title>{city.metaTitle}</title>
         <meta name="description" content={city.metaDescription} />
-        <link rel="canonical" href={`https://www.renovlaser.fr/decapage-laser-${city.slug}`} />
+        <link rel="canonical" href={`https://www.renovlaser.fr/decapage-laser/${city.slug}`} />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
       <Header />
