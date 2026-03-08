@@ -50,7 +50,7 @@ const SeoCity = ({ slug }: { slug: string }) => {
                 <span>/</span>
                 <Link to="/zones-intervention" className="hover:text-primary no-underline">Zones</Link>
                 <span>/</span>
-                <Link to={`/decapage-laser-${dept.slug}`} className="hover:text-primary no-underline">{dept.name}</Link>
+                <Link to={`/decapage-laser/${dept.slug}`} className="hover:text-primary no-underline">{dept.name}</Link>
                 <span>/</span>
                 <span className="text-foreground font-semibold">{city.name}</span>
               </nav>
