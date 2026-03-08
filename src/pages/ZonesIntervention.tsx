@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
-import { seoDepartments } from "@/data/seoLocations";
+import { allDepartments } from "@/data/seoLocations";
 
 const ZonesIntervention = () => (
   <>
@@ -18,10 +18,10 @@ const ZonesIntervention = () => (
         <section className="mb-16">
           <h2 className="text-2xl font-extrabold mb-8 text-center">🏙️ Île-de-France & départements proches</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {seoDepartments.map((dept, idx) => (
+            {allDepartments.map((dept, idx) => (
               <AnimateOnScroll key={dept.slug} delay={idx * 60}>
                 <Link
-                  to={`/decapage-laser-${dept.slug}`}
+                  to={`/decapage-laser/${dept.slug}`}
                   className="block bg-card rounded-2xl p-5 shadow-sm border border-border hover:border-primary hover:shadow-lg transition-all no-underline group"
                 >
                   <h3 className="font-extrabold text-lg group-hover:text-primary transition-colors mb-2">

@@ -282,12 +282,20 @@ export const seoDepartments: SeoDepartment[] = [
   },
 ];
 
+import { seoDepartmentsDormans } from "./seoLocationsDormans";
+
+// Merge all departments
+export const allDepartments: SeoDepartment[] = [
+  ...seoDepartments,
+  ...seoDepartmentsDormans,
+];
+
 // Helper functions
 export const getAllCities = (): SeoCity[] =>
-  seoDepartments.flatMap((d) => d.cities);
+  allDepartments.flatMap((d) => d.cities);
 
 export const getDepartmentBySlug = (slug: string) =>
-  seoDepartments.find((d) => d.slug === slug);
+  allDepartments.find((d) => d.slug === slug);
 
 export const getCityBySlug = (slug: string) =>
   getAllCities().find((c) => c.slug === slug);

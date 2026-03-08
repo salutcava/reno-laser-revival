@@ -36,7 +36,7 @@ const SeoCity = ({ slug }: { slug: string }) => {
       <Helmet>
         <title>{city.metaTitle}</title>
         <meta name="description" content={city.metaDescription} />
-        <link rel="canonical" href={`https://www.renovlaser.fr/decapage-laser-${city.slug}`} />
+        <link rel="canonical" href={`https://www.renovlaser.fr/decapage-laser/${city.slug}`} />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
       <Header />
@@ -50,7 +50,7 @@ const SeoCity = ({ slug }: { slug: string }) => {
                 <span>/</span>
                 <Link to="/zones-intervention" className="hover:text-primary no-underline">Zones</Link>
                 <span>/</span>
-                <Link to={`/decapage-laser-${dept.slug}`} className="hover:text-primary no-underline">{dept.name}</Link>
+                <Link to={`/decapage-laser/${dept.slug}`} className="hover:text-primary no-underline">{dept.name}</Link>
                 <span>/</span>
                 <span className="text-foreground font-semibold">{city.name}</span>
               </nav>
@@ -166,14 +166,14 @@ const SeoCity = ({ slug }: { slug: string }) => {
                 {otherCities.map((c) => (
                   <Link
                     key={c.slug}
-                    to={`/decapage-laser-${c.slug}`}
+                    to={`/decapage-laser/${c.slug}`}
                     className="bg-card border border-border rounded-full px-5 py-2 text-sm font-semibold hover:border-primary hover:text-primary transition-all no-underline"
                   >
                     {c.name}
                   </Link>
                 ))}
                 <Link
-                  to={`/decapage-laser-${dept.slug}`}
+                  to={`/decapage-laser/${dept.slug}`}
                   className="bg-primary/10 text-primary rounded-full px-5 py-2 text-sm font-semibold hover:bg-primary hover:text-primary-foreground transition-all no-underline"
                 >
                   Tout le {dept.name} →

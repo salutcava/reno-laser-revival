@@ -3,21 +3,21 @@ import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
-import { getDepartmentBySlug, seoDepartments } from "@/data/seoLocations";
+import { getDepartmentBySlug, allDepartments } from "@/data/seoLocations";
 
 const SeoDepartment = ({ slug }: { slug: string }) => {
   const dept = getDepartmentBySlug(slug);
 
   if (!dept) return <Navigate to="/zones-intervention" replace />;
 
-  const otherDepts = seoDepartments.filter((d) => d.slug !== dept.slug).slice(0, 4);
+  const otherDepts = allDepartments.filter((d) => d.slug !== dept.slug).slice(0, 4);
 
   return (
     <>
       <Helmet>
         <title>{dept.metaTitle}</title>
         <meta name="description" content={dept.metaDescription} />
-        <link rel="canonical" href={`https://www.renovlaser.fr/decapage-laser-${dept.slug}`} />
+        <link rel="canonical" href={`https://www.renovlaser.fr/decapage-laser/${dept.slug}`} />
       </Helmet>
       <Header />
       <main>
@@ -120,7 +120,7 @@ const SeoDepartment = ({ slug }: { slug: string }) => {
               {dept.cities.map((city, idx) => (
                 <AnimateOnScroll key={city.slug} delay={idx * 80}>
                   <Link
-                    to={`/decapage-laser-${city.slug}`}
+                    to={`/decapage-laser/${city.slug}`}
                     className="block bg-background rounded-xl p-5 border border-border/50 hover:border-primary hover:shadow-lg transition-all no-underline group"
                   >
                     <h3 className="font-bold text-lg group-hover:text-primary transition-colors">
@@ -151,7 +151,7 @@ const SeoDepartment = ({ slug }: { slug: string }) => {
               {otherDepts.map((d) => (
                 <Link
                   key={d.slug}
-                  to={`/decapage-laser-${d.slug}`}
+                  to={`/decapage-laser/${d.slug}`}
                   className="bg-card border border-border rounded-full px-5 py-2 text-sm font-semibold hover:border-primary hover:text-primary transition-all no-underline"
                 >
                   {d.name} ({d.code})
