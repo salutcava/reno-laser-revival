@@ -17,7 +17,7 @@ const SeoDepartment = ({ slug }: { slug: string }) => {
       <Helmet>
         <title>{dept.metaTitle}</title>
         <meta name="description" content={dept.metaDescription} />
-        <link rel="canonical" href={`https://www.renovlaser.fr/decapage-laser-${dept.slug}`} />
+        <link rel="canonical" href={`https://www.renovlaser.fr/decapage-laser/${dept.slug}`} />
       </Helmet>
       <Header />
       <main>
