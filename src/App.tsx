@@ -10,6 +10,7 @@ import LaserRenovation from "./pages/LaserRenovation";
 import RenovationDecapage from "./pages/RenovationDecapage";
 import MentionsLegales from "./pages/MentionsLegales";
 import CGU from "./pages/CGU";
+import SeoDepartmentOrCity from "./pages/SeoDepartmentOrCity";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,6 +29,8 @@ const App = () => (
           <Route path="/renovation-decapage" element={<RenovationDecapage />} />
           <Route path="/mentions-legales" element={<MentionsLegales />} />
           <Route path="/cgu" element={<CGU />} />
+          {/* SEO pages with dynamic slugs */}
+          <Route path="/decapage-laser-:slug" element={<SeoDepartmentOrCity />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
