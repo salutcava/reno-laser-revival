@@ -19,7 +19,7 @@ const ZonesIntervention = () => (
         <section className="mb-16">
           <h2 className="text-2xl font-extrabold mb-8 text-center">🏙️ Île-de-France & départements proches</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {allDepartments.map((dept, idx) => (
+            {seoDepartments.map((dept, idx) => (
               <AnimateOnScroll key={dept.slug} delay={idx * 60}>
                 <Link
                   to={`/decapage-laser/${dept.slug}`}
@@ -43,21 +43,30 @@ const ZonesIntervention = () => (
           </div>
         </section>
 
-        {/* Original local zone */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-extrabold mb-8 text-center">📍 Zone historique — Dormans et environs</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
-            {[
-              "Dormans", "Épernay", "Château-Thierry", "Reims (sud)",
-              "Fismes", "Fère-en-Tardenois", "Condé-en-Brie", "Orbais-l'Abbaye",
-              "Montmirail", "Sézanne", "Vertus", "Avize",
-              "Ay-Champagne", "Mareuil-sur-Ay", "Hautvillers", "Damery",
-              "Troissy", "Vincelles", "Verneuil", "Châtillon-sur-Marne",
-              "Binson-et-Orquigny", "Cuchery", "Leuvrigny", "Festigny",
-            ].map((ville) => (
-              <div key={ville} className="bg-card rounded-xl px-4 py-3 text-center font-semibold text-sm shadow-sm border border-border">
-                📍 {ville}
-              </div>
+        {/* Dormans & environs */}
+        <section className="mb-16">
+          <h2 className="text-2xl font-extrabold mb-8 text-center">📍 Dormans et environs</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {seoDepartmentsDormans.map((dept, idx) => (
+              <AnimateOnScroll key={dept.slug} delay={idx * 60}>
+                <Link
+                  to={`/decapage-laser/${dept.slug}`}
+                  className="block bg-card rounded-2xl p-5 shadow-sm border border-border hover:border-primary hover:shadow-lg transition-all no-underline group"
+                >
+                  <h3 className="font-extrabold text-lg group-hover:text-primary transition-colors mb-2">
+                    {dept.name} ({dept.code})
+                  </h3>
+                  <p className="text-muted-foreground text-sm mb-3 line-clamp-2">{dept.description.slice(0, 100)}…</p>
+                  <div className="flex flex-wrap gap-1.5">
+                    {dept.cities.slice(0, 3).map((c) => (
+                      <span key={c.slug} className="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full font-medium">
+                        {c.name}
+                      </span>
+                    ))}
+                  </div>
+                  <span className="text-primary text-sm font-semibold mt-3 inline-block">Voir les villes →</span>
+                </Link>
+              </AnimateOnScroll>
             ))}
           </div>
         </section>
