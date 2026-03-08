@@ -3,6 +3,8 @@ import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
+import SeoCTA from "@/components/seo/SeoCTA";
+import SeoHeroContact from "@/components/seo/SeoHeroContact";
 import { getCityBySlug, getDepartmentBySlug } from "@/data/seoLocations";
 
 const SeoCity = ({ slug }: { slug: string }) => {
@@ -65,14 +67,7 @@ const SeoCity = ({ slug }: { slug: string }) => {
                   🏙️ {city.name} — {city.population} habitants
                 </p>
               )}
-              <div className="flex flex-wrap gap-4">
-                <a href="tel:+33761466823" className="bg-primary text-primary-foreground px-8 py-3 rounded-full font-bold no-underline hover:opacity-90 transition-opacity shadow-lg">
-                  📞 Devis gratuit — 07 61 46 68 23
-                </a>
-                <a href="mailto:contact@renovlaser.fr" className="border-2 border-primary text-primary px-8 py-3 rounded-full font-bold no-underline hover:bg-primary hover:text-primary-foreground transition-all">
-                  ✉️ Nous contacter
-                </a>
-              </div>
+              <SeoHeroContact />
             </AnimateOnScroll>
           </div>
         </section>
@@ -183,27 +178,7 @@ const SeoCity = ({ slug }: { slug: string }) => {
           </section>
         )}
 
-        {/* CTA */}
-        <section className="py-16 bg-primary/5">
-          <div className="container mx-auto max-w-3xl px-5 text-center">
-            <AnimateOnScroll>
-              <h2 className="text-2xl md:text-3xl font-extrabold mb-4">
-                Vous êtes à {city.name} ?
-              </h2>
-              <p className="text-muted-foreground mb-8">
-                Devis gratuit sous 24h — Intervention rapide — Résultat garanti
-              </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <a href="tel:+33761466823" className="bg-primary text-primary-foreground px-8 py-4 rounded-full font-bold text-lg no-underline hover:opacity-90 transition-opacity shadow-lg">
-                  📞 07 61 46 68 23
-                </a>
-                <a href="https://wa.me/33761466823" target="_blank" rel="noopener" className="bg-[#25D366] text-white px-8 py-4 rounded-full font-bold text-lg no-underline hover:opacity-90 transition-opacity shadow-lg">
-                  💬 WhatsApp
-                </a>
-              </div>
-            </AnimateOnScroll>
-          </div>
-        </section>
+        <SeoCTA title={`Vous êtes à ${city.name} ?`} subtitle="Devis gratuit sous 24h — Intervention rapide — Résultat garanti" />
       </main>
       <Footer />
     </>
