@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { allDepartments } from "@/data/seoLocations";
+import Logo from "./Logo";
 
 const Footer = () => (
   <footer className="bg-[hsl(var(--gris-anth))] text-white py-12 px-5">
